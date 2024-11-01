@@ -1,0 +1,102 @@
+.afrsm-main-table .fs-section{background-color: #ffffff;}
+.fs-cards-list {display: flex;flex-wrap: wrap; padding: 0 15px;}
+.fs-card.fs-addon {width:calc(33.33% - 30px);margin: 10px 15px 20px 15px;border-radius: 5px;filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.15));background-color: #ffffff;overflow: auto;}
+.fs-card-banner {width: 100%;position: relative;border-top-left-radius: 5px;border-top-right-radius: 5px;}
+.fs-card-banner img{width: 100%;max-width: 100%;height: auto;}
+.asfrm-card-title-prce-wrap {display: flex;flex-wrap: nowrap;gap:20px;justify-content: space-between;}
+.fs-title {font-size: 20px;letter-spacing: 0px;line-height: 28px;color: #000000;font-weight: 700;margin: 0;display: inline-block;}
+.fs-offer {font-size: 24px;letter-spacing: 0px;line-height: 36px;color: #000000;font-weight: 700;float: right;display: inline-block;margin: 0;}
+.fs-description{font-size: 14px;letter-spacing: 0px;line-height: 20px;color: #000000;font-weight: 400;}
+#fs_addons .fs-cards-list .fs-card .fs-overlay {position: absolute;left: 0;right: 0;bottom: 0;top: 0;z-index: 9;}
+.fs-card-details {padding: 20px;}
+.fs-badge.fs-installed-addon-badge {position: absolute;bottom: 4px;right: 0;top:auto;border-bottom-left-radius: 5px;background-color: #000;padding: 5px 15px;border-top-left-radius: 5px;color:#fff;box-shadow:none}
+.fs-cta {text-align: right;margin-bottom: 0;}
+#fs_addons .fs-cards-list .fs-cta a{border-radius: 3px;}
+
+/* Thickbox for the Plugin details modal. */
+#TB_window, #TB_window iframe {
+    width: 821px !important;
+}
+#TB_window{
+	background: #fff;
+}
+
+#TB_window.thickbox-loading:before {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: -1;
+	margin: -10px 0 0 -10px;
+	background: #fff url(../images/spinner.gif) no-repeat center;
+	background-size: 20px 20px;
+	transform: translateZ(0);
+}
+
+@media print,
+	(-webkit-min-device-pixel-ratio: 1.25),
+	(min-resolution: 120dpi) {
+
+	#TB_window.thickbox-loading:before {
+		background-image: url(../images/spinner-2x.gif);
+	}
+}
+
+#TB_title {
+	/* float: left; */
+	height: 1px;
+}
+
+#TB_ajaxWindowTitle {
+	display: none;
+}
+
+#TB_closeWindowButton {
+	left: auto;
+	right: -30px;
+	/* color: #f0f0f1; */
+}
+
+#TB_closeWindowButton:hover,
+#TB_closeWindowButton:focus {
+	outline: none;
+	box-shadow: none;
+}
+
+#TB_closeWindowButton:hover::after,
+#TB_closeWindowButton:focus::after {
+	outline: 2px solid;
+	outline-offset: -4px;
+	border-radius: 4px;
+}
+
+.tb-close-icon {
+	display: none !important;
+}
+
+#TB_closeWindowButton:after {
+	content: "\f335";
+	font: normal 32px/29px 'dashicons';
+	speak: never;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* move plugin install close icon to top on narrow screens */
+@media screen and (max-width: 1200px) {
+    .fs-card.fs-addon {
+        width: calc(50% - 30px);
+    }
+}
+@media screen and (max-width: 830px) {
+	#TB_closeWindowButton {
+		right: 0;
+		top: -30px;
+	}
+    .fs-card.fs-addon {
+        width: 100%;
+    }
+}
